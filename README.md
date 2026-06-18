@@ -66,7 +66,7 @@ El proyecto cumple con los siguientes requisitos:
 
 ---
 
-# 👥 Integrantes
+# Integrantes
 
 - **Lucas Robledo**
 - **Bruno Rabaglino**
