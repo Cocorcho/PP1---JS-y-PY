@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Películas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-900 
+min-h-screen text-white">
+
+  <nav class="border-b border-slate-800 bg-slate-900/40 backdrop-blur-md py-4">
+    <div class="max-w-7xl mx-auto flex justify-between">
+      <span class="text-xl font-bold text-cyan-400 font-mono tracking-wider">FILMAX</span>
+      <div class="flex gap-4">
+        <button id="nav-search-btn" class="text-sm font-medium 
+        transition-colors duration-300 text-cyan-400 
+        px-2 py-1 border-b-2 border-cyan-400">
+          Explorar
+        </button>
+        <button id="nav-profile-btn" class="text-sm font-medium 
+        transition-colors duration-300 text-slate-400
+        px-2 py-1">
+          Mi Perfil
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-6 py-12 max-w-7xl">
+
+    <div id="search-section" class="block">
+      <header class="text-center relative">
+
+        <div class="absolute -top-10 left-1/2 -translate-1/2 bg-cyan-500/10 w-72 h-72 rounded-full blur-[120px]">
+        </div>
+        <h1
+          class="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-teal-200 to-indigo-400 bg-clip-text text-transparent">
+          Coleccion de peliculas
+        </h1>
+        <p class="mt-4 text-slate-400 text-lg mx-auto font-light">
+          Powered by Fast API.
+        </p>
+      </header>
+
+      <div class="max-w-xl mx-auto mb-10 mt-16">
+        <div class="flex items-center gap-2">
+          <input id="search-input" type="text" placeholder="Buscar una pelicula..."
+            class="w-full bg-slate-900/60 border border-slate-800 rounded-xl px-4 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
+
+          <button id="search-btn" class="bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 rounded-xl
+          hover:from-cyan-400 hover:to-teal-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 
+          active:scale-95">
+            Buscar
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-end max-w-7xl mx-auto mb-6">
+        <button id="add-movie-btn" class="bg-slate-800 hover:bg-slate-700 border border-slate-700
+        text-sm rounded-xl px-4 py-2 transition-colors duration-300">
+          + Agregar pelicula
+        </button>
+      </div>
+
+      <main id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+      </main>
+    </div>
+
+    <div id="profile-section" class="hidden mb-12">
+      <div class="p-8 bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded">
+        <h1 class="text-3xl font-bold">
+          Pelis Favoritas
+        </h1>
+        <p class="text-slate-400 mt-2 text-sm">
+          Estas peliculas se guardan en el localStorage de tu navegador.
+        </p>
+      </div>
+
+      <div id="favoritos-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 w-full max-w-md">
+      <h2 id="modal-title" class="text-xl font-bold mb-4 text-cyan-400">Detalle</h2>
+
+
+      <div id="modal-detalle" class="hidden space-y-2 text-slate-300"></div>
+
+      <form id="modal-form" class="hidden space-y-3">
+        <input type="hidden" id="form-id">
+
+        <div>
+          <label class="block text-sm text-slate-400 mb-1">Título</label>
+          <input id="form-titulo" type="text" required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-cyan-500">
+        </div>
+
+        <div>
+          <label class="block text-sm text-slate-400 mb-1">Director</label>
+          <input id="form-director" type="text" required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-cyan-500">
+        </div>
+
+        <div>
+          <label class="block text-sm text-slate-400 mb-1">Año</label>
+          <input id="form-anio" type="number" required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-cyan-500">
+        </div>
+
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 
+          rounded-lg px-4 py-2 font-semibold transition-all duration-300">
+          Guardar
+        </button>
+      </form>
+
+      <button id="modal-close" class="mt-4 text-sm text-slate-400 hover:text-white transition-colors">
+        Cerrar
+      </button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
