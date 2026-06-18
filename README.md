@@ -12,7 +12,7 @@ El desarrollo cumple con los requisitos establecidos para el **Trabajo Práctico
 
 ---
 
-# 🚀 Tecnologías utilizadas
+# Tecnologías utilizadas
 
 - HTML5
 - CSS3
