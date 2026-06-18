@@ -2,7 +2,7 @@
 
 > Aplicación web desarrollada para el Trabajo Práctico Evaluativo de Práctica Profesionalizante I (JavaScript) y (Python).
 
-## 📖 Descripción
+## Descripción
 
 Este proyecto consiste en una aplicación web desarrollada con **HTML, CSS y JavaScript**, cuyo objetivo es consumir una API desarrollada en Python, permitiendo visualizar, crear, editar y eliminar registros de forma dinámica.
 
