@@ -70,4 +70,16 @@ async def actualizar_pelicula(
 
     raise HTTPException(status_code=404, detail="Articulo no encontrado")
 @peliculas_routers.delete("/{id}", responses=NOT_FOUND_RESPONSE)
-async def eliminar_pelicula(id: Annotated[int, Path(gt=0)], db:Session = Depends(get_db)):
+async def eliminar_pelicula(id: Annotated[int, Path(gt=0)], 
+                            db:Session = Depends(get_db)
+                            logico: Annotated[bool, query()] = False,
+                           ) -> PeliculaSchema:
+    pelicula_obtenidas = db.get(Pelicula,id)
+    if pelicula_obtenida is not None:
+        if logico:
+            pelicula_obtenida.activo = False 
+        else
+            db.delete(pelicula_obtenida)
+            db.commit
+    return db.query(Pelicula).all()
+    raise HTTPException(status_code=404, detail="Articulo no encontrado")
