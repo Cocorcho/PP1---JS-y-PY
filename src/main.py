@@ -1,7 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers.peliculas import peliculas_routers
 
+from database import Base, engine
+from models.articulos import (
+    Pelicula,  
+)
+from routers.peliculas import articulos_routers
+
+
+# Crea las tablas y la db
+Base.metadata.create_all(bind=engine)
 
 cine_app = FastAPI()
 
